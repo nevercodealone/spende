@@ -1,11 +1,12 @@
 <template>
   <form action="http://localhost/froschkoenige/pay.php" method="POST" class="dataform" v-on:submit="next">
-    <Slider :model="model.amount" class="dataform__slider"></Slider>
-    <Owner :model="model"></Owner>
-    <Card v-if="model.type === 'card'" :model="model"></Card>
+    <Slider v-if="step === 2" :model="model.amount" class="dataform__slider"></Slider>
+    <Owner v-if="step === 3" :model="model"></Owner>
+    <Card v-if="step === 1" :model="model"></Card>
     <input type="hidden" name="source" :value="model.source">
     <input type="hidden" name="amount" :value="amount">
-    <button type="submit" class="dataform__submit">Weiter</button>
+    <button v-if="step < 3" v-on:click="nextStep" type="button" class="dataform__submit">Weiter</button>
+    <button v-if="step === 3" type="submit" class="dataform__submit">Spenden</button>
   </form>
 </template>
 
@@ -28,6 +29,9 @@
       }
     },
     methods: {
+      nextStep: function (event) {
+        store.commit("nextStep");
+      },
       next: function (event) {
         event.preventDefault();
 
@@ -65,6 +69,9 @@
       },
       amount() {
         return store.state.model.amount * 100;
+      },
+      step() {
+          return store.state.step;
       }
     }
   }

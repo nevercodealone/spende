@@ -2,13 +2,14 @@
   <div class="slider">
     <div class="slider__amount">EUR <input :value="model" class="slider__input"></div>
     <div class="slider__slider"></div>
+    <p>{{text}}</p>
   </div>
 </template>
 
 <script>
   const noUiSlider = require('nouislider');
   import 'nouislider/distribute/nouislider.css';
-
+  import store from './../store';
   export default {
     props: ['model'],
     mounted() {
@@ -20,9 +21,9 @@
         connect: [true, false],
         range: {
           min: 1,
-          max: 100
+          max: 1000
         },
-        step: 1,
+        step: 10,
       });
 
       slider.noUiSlider.on('slide', (values) => {
@@ -37,8 +38,35 @@
           amount: event.target.value
         });
       });
+    },
+    computed:{
+        text(){
+            const texts = [
+              {
+                  from: 0,
+                  text: "Pausenbrot"
+              },
+              {
+                  from: 100,
+                  text: "Schulrucksack"
+              },
+              {
+                  from: 400,
+                  text: "NevercodeAlone"
+              },
+              {
+                  from: 600,
+                  text: "CHECK24"
+              }
+            ];
+            let text;
+            while(text = texts.pop()){
+                if (text.from < store.state.model.amount){
+                    return text.text;
+                }
+            }
+        }
     }
-
   }
 </script>
 

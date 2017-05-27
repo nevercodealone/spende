@@ -27,6 +27,9 @@ const store = new Vuex.Store({
       state.model.amount = Math.floor(state.model.amount);
       sessionStorage.setItem('froschkoenige-widget', JSON.stringify(state.model));
     },
+    nextStep (state) {
+      state.step++;
+    },
   }
 });
 
