@@ -12,6 +12,7 @@
   "dependencies": {
     "node-sass": "^4.5.3",
     "nouislider": "^9.2.0",
+    "shelljs": "^0.7.7",
     "vue": "^2.2.6",
     "vue-form-generator": "^2.0.0-beta6",
     "vue-router": "^2.3.1",
@@ -42,7 +43,6 @@
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.5",
     "semver": "^5.3.0",
-    "shelljs": "^0.7.6",
     "url-loader": "^0.5.8",
     "vue-loader": "^11.3.4",
     "vue-style-loader": "^2.0.5",
