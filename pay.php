@@ -1,7 +1,5 @@
 <?php
 
-echo 'HALLO'; exit;
-
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Set your secret key: remember to change this to your live secret key in production
