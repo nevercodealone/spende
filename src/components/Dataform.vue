@@ -37,6 +37,8 @@
             return;
           }
 
+          console.log(JSON.stringify(response, null, 4));
+
           store.commit('updateModel', {
             source: response.id
           });
