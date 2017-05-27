@@ -14,4 +14,6 @@ $charge = \Stripe\Charge::create(array(
   "amount" => $_POST['amount'],
   "currency" => "eur",
   "source" => $_POST['source'],
+  "receipt_email" => $_POST['email'],
+  "metadata" => $_POST,
 ));
