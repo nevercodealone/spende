@@ -51,7 +51,7 @@
             XHR.addEventListener('error', function() {
               alert('Fehler!');
             });
-            XHR.open('POST', 'https://froschkoenige-spenden-widget.herokuapp.com/pay.php');
+            XHR.open('POST', 'http://localhost/froschkoenige/pay.php');
             XHR.send(payload);
           });
         });
