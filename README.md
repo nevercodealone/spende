@@ -5,6 +5,9 @@
 ## Build Setup
 
 ``` bash
+# PHP
+composer install
+
 # install dependencies
 npm install [OR] yarn
 
