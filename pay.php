@@ -1,4 +1,6 @@
 <?php
+error_reporting(2047);
+ini_set('display_errors', true);
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -20,4 +22,3 @@ $charge = \Stripe\Charge::create(array(
   "metadata" => $_POST,
 ));
 
-var_dump($_POST);
