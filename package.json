@@ -14,9 +14,9 @@
     "vue": "^2.2.6",
     "vue-form-generator": "^2.0.0-beta6",
     "vue-router": "^2.3.1",
-    "vuex": "^2.3.1"
-  },
-  "devDependencies": {
+    "vuex": "^2.3.1",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.7",
     "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
@@ -41,8 +41,6 @@
     "ora": "^1.2.0",
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.5",
-    "semver": "^5.3.0",
-    "shelljs": "^0.7.7",
     "url-loader": "^0.5.8",
     "vue-loader": "^11.3.4",
     "vue-style-loader": "^2.0.5",
@@ -54,8 +52,8 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": "6.9.1",
-    "npm": "3.10.8"
+    "node": "7.8.0",
+    "npm": "4.2.0"
   },
   "browserslist": [
     "> 1%",
