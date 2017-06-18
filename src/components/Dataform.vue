@@ -7,7 +7,7 @@
       <div v-show="step === 2">
         <NCA-Card v-if="type === 'card'" :model="model"></NCA-Card>
       </div>
-      <div v-show="step === 3">
+      <div v-if="step === 3">
         <NCA-Slider :model="model.amount" class="dataform__slider"></NCA-Slider>
       </div>
       <div v-show="step === 4">
