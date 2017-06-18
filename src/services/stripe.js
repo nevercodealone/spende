@@ -1,6 +1,7 @@
 import store from './../store';
+import keys from './../../.stripe.json';
 
-const key = 'pk_test_Pz4Ge3sttSjcEXrDL7Sn4EMi';
+const key = keys.pk; //'pk_test_Pz4Ge3sttSjcEXrDL7Sn4EMi';
 
 // v2
 const stripeV2 = Stripe;
