@@ -17,3 +17,5 @@ $charge = \Stripe\Charge::create(array(
   "receipt_email" => $_POST['email'],
   "metadata" => $_POST,
 ));
+
+var_dump($_POST);

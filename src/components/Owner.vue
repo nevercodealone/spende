@@ -1,6 +1,5 @@
 <template>
-  <div class="card">
-    <h1>Ihre Daten</h1>
+  <div class="owner">
     <vue-form-generator :schema="schema" :model="model"></vue-form-generator>
   </div>
 </template>
@@ -22,6 +21,28 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
   @import "../scss/_globals.scss";
+
+  .owner {
+    .input {
+      &-firstname,
+      &-lastname {
+        width: calc(50% - #{rem(10px)});
+      }
+
+      &-zip {
+        width: calc(25% - #{rem(10px)});
+      }
+
+      &-city {
+        width: calc(75% - #{rem(10px)});
+      }
+
+      &-lastname,
+      &-city {
+        margin-left: rem(20px);
+      }
+    }
+  }
 </style>

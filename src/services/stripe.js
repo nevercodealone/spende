@@ -17,7 +17,8 @@ const process = (callback) => {
       owner: {
         name: `${model.firstname} ${model.lastname}`,
         address: {
-          line1: model.street,
+          line1: model.line1,
+          line2: model.line2,
           city: model.city,
           country: model.country,
           postal_code: model.zip,

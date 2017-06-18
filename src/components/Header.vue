@@ -1,12 +1,12 @@
 <template>
   <div class="header">
-    <button type="button" v-on:click="click">
+    <button type="button" v-on:click="click" class="header__button">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="currentColor" fill-rule="evenodd"
               d="M14.123 12l9.437-9.438A1.5 1.5 0 1 0 21.438.44L12 9.877 2.562.44A1.5 1.5 0 1 0 .44 2.562L9.878 12 .44 21.437a1.5 1.5 0 1 0 2.122 2.122L12 14.122l9.438 9.437a1.496 1.496 0 0 0 2.122 0 1.5 1.5 0 0 0 0-2.122L14.123 12z"/>
       </svg>
     </button>
-    Überschrift
+    {{ headline }}
   </div>
 </template>
 
@@ -14,6 +14,7 @@
   import store from './../store';
 
   export default {
+    props: ['headline'],
     methods: {
       click: (event) => {
         store.commit('toggleOverlay');
@@ -28,6 +29,7 @@
 
   .header {
     position: absolute;
+    z-index: 1;
     left: 0;
     right: 0;
     top: 0;
@@ -45,17 +47,24 @@
     right: rem(30px);
     top: 50%;
     transform: translateY(-50%);
+    padding: 0;
     color: inherit;
     border: none;
     background: transparent;
-    font-size: inherit;
-    line-height: inherit;
+    font-size: 0;
+    line-height: 0;
     cursor: pointer;
     transition: color .3s;
     vertical-align: middle;
 
     &:hover {
       color: #b8ce9c;
+    }
+
+    &,
+    > svg {
+      width: rem(24px);
+      height: rem(24px);
     }
   }
 </style>
