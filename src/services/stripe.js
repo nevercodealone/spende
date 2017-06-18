@@ -13,7 +13,7 @@ const process = (callback) => {
   stripeV2.source.create((() => {
     const data = {
       type: model.type,
-      amount: Math.floor(model.amount),
+      amount: Math.floor(model.amount * 100),
       currency: 'eur',
       owner: {
         name: `${model.firstname} ${model.lastname}`,
