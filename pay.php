@@ -4,7 +4,7 @@ ini_set('display_errors', true);
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
-\Stripe\Stripe::setApiKey($_ENV['sk']); // "sk_test_4a88DnIYqkODZPXlEwd4riSV"
+\Stripe\Stripe::setApiKey(getenv('sk')); // "sk_test_4a88DnIYqkODZPXlEwd4riSV"
 
 if (!isset($_POST['amount'])) {
   exit;
